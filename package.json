@@ -1,13 +1,13 @@
 {
-  "name": "ionic2-systemjs",
-  "description": "ionic2-systemjs: Ionic project using SystemJS",
+  "name": "angular2-systemjs-builder",
+  "description": "Angular2 Template using SystemJS Builder",
   "version": "1.0.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/conclurer/ionic2-systemjs.git"
+    "url": "https://github.com/Inoverse/angular2-systemjs-builder.git"
   },
-  "readme": "https://github.com/conclurer/ionic2-systemjs",
+  "readme": "https://github.com/Inoverse/angular2-systemjs-builder",
   "scripts": {
     "install": "typings install"
   },
