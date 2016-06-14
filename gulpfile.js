@@ -16,13 +16,13 @@
     // Watch task
     gulp.task('watch', ['clean'], function (done) {
         runSequence(
-            ['build-js'],
+            ['build-dev-js'],
             function () {
                 gulpWatch('app/**/*.scss', function () {
                     gulp.start('sass');
                 });
                 gulpWatch(['app/**/*.html', 'app/**/*.ts'], function () {
-                    gulp.start('build-js')
+                    gulp.start('build-dev-js')
                 });
                 done();
             }

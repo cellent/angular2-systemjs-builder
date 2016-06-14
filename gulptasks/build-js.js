@@ -8,4 +8,12 @@ module.exports = function (gulp) {
             function () {}
         );
     });
+
+    gulp.task('build-dev-js', function () {
+        runSequence(
+            'compile-dev-tsc',
+            // ['bundle-static', 'bundle-vendor', 'bundle-app'],
+            function () {}
+        );
+    });
 }

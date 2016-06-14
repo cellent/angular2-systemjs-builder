@@ -6,5 +6,4 @@ module.exports = function (gulp, isRelease) {
         if (isRelease) chain = chain.pipe(uglify({mangle: { keep_fnames: true}, compress: {keep_fnames: true} }));
         return chain.pipe(gulp.dest('./www/build/app'));
     });
-
 }

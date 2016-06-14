@@ -8,10 +8,12 @@
     <meta name="msapplication-tap-highlight" content="no">
 </head>
 <body>
-<script src="/www/build/static.js"></script>
+<script src="/node_modules/systemjs/dist/system-polyfills.js"></script>
+<script src="/node_modules/reflect-metadata/Reflect.js"></script>
+<script src="/node_modules/es6-shim/es6-shim.min.js"></script>
+<script src="/node_modules/zone.js/dist/zone.js"></script>
+<script src="/node_modules/systemjs/dist/system.src.js"></script>
 <script src="system.config.js"></script>
-
-<script src="/www/build/dependencies.js"></script>
 <!-- this Ionic's root component and where the app will load -->
 <script>
     System.import('app/main').then(null, console.error.bind(console));
