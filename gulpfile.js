@@ -10,7 +10,7 @@
             require('./gulptasks/'+task+'.js')(gulp, isRelease);
         });
     gulp.task('clean', function () {
-        return del(['www/build', 'app/dist']);
+        return del(['www/build', 'app/dist', 'app/**/*.js', 'app/**/*.js.map']);
     });
 
     // Watch task
