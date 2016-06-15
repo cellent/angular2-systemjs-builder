@@ -32,6 +32,14 @@ Start the local webserver using:
 ws --port 80
 ```
 
+# Build a release version
+
+If you need to deploy a new version of your project you have to create a new release build. The integrated gulp scripts can handle this for you. So if you want to run a release build just type:
+```
+gulp build --release
+```
+After the process has run successfully you can pick your files from the 'www' folder and copy them to your web server. Enjoy!
+
 ## TODO
 
 More documentation to do...
