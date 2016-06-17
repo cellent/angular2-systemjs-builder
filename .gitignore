@@ -10,6 +10,8 @@ www/build/
 *.swp
 .DS_Store
 Thumbs.db
+index.html
+www/index.html
 
 # Exclude compiled files in app
 app/**/*.js

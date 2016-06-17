@@ -1,19 +1,21 @@
-module.exports = function (gulp) {
+module.exports = function (gulp, isRelease) {
     var runSequence = require('run-sequence');
 
     gulp.task('build-js', function () {
-        runSequence(
-            'compile-tsc',
-            ['bundle-static', 'bundle-vendor', 'bundle-app'],
-            function () {}
-        );
-    });
-
-    gulp.task('build-dev-js', function () {
-        runSequence(
-            'compile-dev-tsc',
-            // ['bundle-static', 'bundle-vendor', 'bundle-app'],
-            function () {}
-        );
+        if (isRelease) {
+            runSequence(
+                'compile-tsc',
+                ['bundle-static', 'bundle-vendor', 'bundle-app'],
+                'prepend-info',
+                'inject-index',
+                function () { }
+            );
+        }
+        else {
+            runSequence(
+                'compile-tsc',
+                function () { }
+            );
+        }
     });
 }
