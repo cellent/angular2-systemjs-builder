@@ -1,4 +1,5 @@
 {
+    "baseURL": "/",
     "packages": {
         "app": {
             "format": "register",

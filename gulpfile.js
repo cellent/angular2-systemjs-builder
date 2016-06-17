@@ -6,18 +6,19 @@
     var packageConfig = require('./package.json');
 
     // Require tasks in 'gulptasks' folder
-    ['systemjs-build', 'static-bundle', 'compile-tsc', 'app-bundle', 'build-js', 'prepend-info']
+    ['systemjs-build', 'static-bundle', 'compile-tsc', 'app-bundle', 'build-js', 'prepend-info', 'inject-index']
         .forEach(function (task) {
             require('./gulptasks/' + task + '.js')(gulp, isRelease, packageConfig);
         });
     gulp.task('clean', function () {
-        return del(['www/build', 'app/dist', 'app/**/*.js', 'app/**/*.js.map']);
+        return del(['www/build', 'app/dist', 'app/**/*.js', 'app/**/*.js.map', 'index.html', 'www/index.html']);
     });
 
     // Watch task
     gulp.task('watch', ['clean'], function (done) {
         runSequence(
-            [jsTask],
+            ['build-js'],
+            'inject-index',
             function () {
                 gulpWatch(['app/**/*.html', 'app/**/*.ts'], function () {
                     gulp.start('build-js')
@@ -31,6 +32,7 @@
     gulp.task('build', ['clean'], function (done) {
         runSequence(
             ['build-js'],
+            'inject-index',
             function () { done(); }
         );
     });

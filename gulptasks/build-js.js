@@ -7,6 +7,7 @@ module.exports = function (gulp, isRelease) {
                 'compile-tsc',
                 ['bundle-static', 'bundle-vendor', 'bundle-app'],
                 'prepend-info',
+                'inject-index',
                 function () { }
             );
         }
