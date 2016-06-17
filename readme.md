@@ -2,7 +2,7 @@
 
 This template is a basic [Angular 2](https://angular.io/) application which uses [SystemJS](https://github.com/systemjs/systemjs) for bundling and [SystemJS Builder](https://github.com/systemjs/builder) for bundling the dependencies and statics.
 
-# Install / Getting started
+# Install
 
 1. Download or clone the project
 2. If not present install gulp globally
@@ -15,31 +15,44 @@ npm install
 ```
 4. Done!
 
-# How to develop
+# Build / Develop
 
-For development and watching the Typescript changes run
+Currently there are two types of builds are available using gulp.
+* Watching Changes
+* Build
+
+both commands are available as gulp tasks:
+```
+gulp build
+```
+This command runs the develop build once and compiles the typescript files into javascript.
 ```
 gulp watch
 ```
-This will compile your typescript into javascript and generates the needed map-files.
+This command runs the develop build once and then it is watching for changes. So if you make changes to your typescript files the build will run again.
 
-If you need a local webserver you can use this package:
-```
-npm install -g local-web-server
-```
-Start the local webserver using:
-```
-ws --port 80
-```
+## Release build
+If you're done with development you can make a release build for deployment. Most times during development you're adding many npm packages. You don't want to copy all these node_modules to your production server. So for this case we build a release command which merges only the used dependencies into one file.
 
-# Build a release version
-
-If you need to deploy a new version of your project you have to create a new release build. The integrated gulp scripts can handle this for you. So if you want to run a release build just type:
+To run the build command you only have to do this:
 ```
 gulp build --release
 ```
-After the process has run successfully you can pick your files from the 'www' folder and copy them to your web server. Enjoy!
+You also can automatically build a new release version every time you make changes:
+```
+gulp watch --release
+```
 
-## TODO
+After the build runs successfully, you can take the content of the 'wwww' folder and copy it to your webserver. Done!
 
-More documentation to do...
+## Local web server during development
+
+For testing your application you need a local web server during development. For example you can use IIS Express or something else. But in case you want to use a lightweight web server which can be installed using npm you may get it with this one:
+```
+npm install -g local-web-server
+```
+To start the web server, navigate to your root folder of your project (where the package.json and the index.html is located) and run:
+```
+ws --port 80
+```
+The full documentation of the local-web-server can be found [here](https://www.npmjs.com/package/local-web-server).
