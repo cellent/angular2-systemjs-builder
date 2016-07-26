@@ -10,7 +10,7 @@ module.exports = function (gulp, isRelease) {
         var dest = 'app';
         if (isRelease)
             dest = 'app/dist';
-        let chain = tsProject.src();
+        var chain = tsProject.src();
         if (!isRelease)
             chain = chain
                 .pipe(sourcemaps.init());
