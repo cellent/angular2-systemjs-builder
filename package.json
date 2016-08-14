@@ -37,7 +37,7 @@
     "gulp-inject": "^4.1.0",
     "gulp-inject-file": "0.0.17",
     "gulp-inject-string": "^1.1.0",
-    "gulp-inline-ng2-template": "^2.1.0",
+    "gulp-inline-ng2-template": "^3.0.0",
     "gulp-insert": "^0.5.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.6.0",
