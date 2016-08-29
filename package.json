@@ -14,7 +14,7 @@
   "dependencies": {
     "es6-module-loader": "^0.17.11",
     "es6-shim": "^0.35.0",
-    "systemjs": "^0.19.36",
+    "systemjs": "^0.19.37",
     "@angular/common": "^2.0.0-rc.4",
     "@angular/compiler": "^2.0.0-rc.4",
     "@angular/core": "^2.0.0-rc.4",
